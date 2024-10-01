@@ -1,0 +1,113 @@
+example.js
+function f() {
+
+var x=1;
+let y =2;
+const z=3;
+
+{
+    var x= 100;
+    let y = 200;
+    const z = 300;
+
+    console.log('x :'+x);
+    console.log('y :'+y);
+    console.log('z :'+z);
+}
+console.log('x outside :'+x);
+console.log('y outside :'+y);
+console.log('z outside :'+z);
+}
+f();
+
+example1.js
+---------------
+var colors = ['green','blue','red','pink'];
+
+function print(val) {
+    console.log(val);
+}
+
+colors.forEach(print);
+
+function capitalize(val) {
+    return val.toUpperCase();
+}
+
+var capitalizedColors = colors.map(capitalize);
+console.log(capitalizedColors);
+
+example3.js
+--------------
+var array = [1,2,3,4]
+const sum = (acc, value) => acc+value;
+const product = (acc,value) => acc*value;
+
+var sumOFArrayElem = array.reduce(sum,0);
+var mulOFArrayElem = array.reduce(product,1);
+
+console.log("Sum", sumOFArrayElem);
+console.log("Multiply", mulOFArrayElem);
+
+var sumOFArrayElem1 = array.reduce((acc,value) => acc+ value,0);
+var mulOFArrayElem1 = array.reduce((acc,value) => acc* value,1);
+
+console.log("Sum", sumOFArrayElem1);
+console.log("Multiply", mulOFArrayElem1);
+
+const sum1 = (acc, value) => {
+    const result = acc+ value;
+    console.log(acc,'plus', value, 'is ', result);
+    return result;
+}
+
+var sumOFArrayElements = array.reduce(sum1,0);
+
+example4.js
+-------------
+class Point{
+    constructor(x,y) {
+        this.x= x;
+        this.y = y;
+    }
+    toString() {
+        return '[X='+ this.x +', Y='+this.y+']';
+    }
+}
+
+class ColorPoint extends Point {
+    static default() {
+        return new ColorPoint(0,0,'black');
+    }
+
+    constructor(x,y,color) {
+        super(x,y);
+        this.color = color;
+    }
+
+    toString() {
+        return '[X='+ this.x +', Y='+this.y+', color = '+ this.color +']';
+    }
+}
+
+
+console.log("first point is "+ new Point(2,10));
+console.log("2 nd point is "+ new ColorPoint(2,10, 'green'));
+console.log("3rd  point is default "+ ColorPoint.default());
+
+example5.js
+---------
+const color = "red";
+
+const point = {
+    x: 5,
+    y : 10,
+    color,
+    toString() {
+        return '[X='+ this.x +', Y='+this.y+', color = '+ this.color +']';
+    },
+    ['prop_'+42] :42
+}
+
+console.log ('This point is '+ point);
+console.log ('The dynamic proprty is '+ point.prop_42);
