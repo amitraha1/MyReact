@@ -1,0 +1,89 @@
+example6.js
+-----------
+function hello(firstname, lastname) {
+    return 'Good Morning ${firstname} ${lastname} ! how are u ?' ;
+}
+
+console.log (hello ("Ram","Kuram"));
+
+example7.js
+---------------
+function sort (arr = [] , direction = 'ascending') {
+    console.log("sort array", arr, direction);
+}
+
+sort ([1,2,3,4]);
+
+sort ([1,2,3,4], 'descending');
+
+example8.js
+-----------
+var array = ["first", "second", "Third"]
+
+var copyOFArray = [...array]
+
+console.log('copy of ', array, 'is', copyOFArray);
+
+console.log('Are ', array, ' and ',copyOFArray, ' same ', array === copyOFArray);
+
+var array1 = ["first", "second", "Third"]
+var array2 = ["red", "yellow", "green"]
+
+var merge = [...array1, ...array2]
+
+console.log("merge "+ merge);
+
+function printColors  (first, second,third, ...others) {
+    console.log(first, " ",second , " ", third , " ", "Others ...");
+    console.log(others);
+}
+
+printColors("b","c","d", "dffdgfdg");
+
+example9.js
+----------
+function printFirstAndSecondElement([first,second]) {
+    console.log(first, " ", second);
+
+
+}
+
+function printSecondAndFourthElement([,second, ,fourth]) {
+    console.log(second, " ", fourth);
+
+    
+}
+
+var array = [1,2,3,4,5,6]
+
+printFirstAndSecondElement(array)
+printSecondAndFourthElement(array)
+
+function printBasicInfo(firstName, secondName, profession) {
+    console.log(firstName,'',secondName , '', profession);
+}
+
+var person = {
+    firstName : "Ram",
+    age : 38,
+    secondName : "Kumar",
+    child : 2,
+    profession : 'Developr'
+}
+
+printBasicInfo(person);
+
+example10.js
+-------------
+function asyncFunc(){
+    return new Promise((resolve,reject) => {
+           setTimeout(() => {
+            const result = Math.random();
+            result > 0.5 ? resolve(result) : reject("Opps ... In Cannot calculate")
+           },1) 
+    });
+}
+
+for (let i=0; i<10 ; i++) {
+    asyncFunc().then(result => console.log("Resulr :"+result)).catch(result => console.log("Error : "+result));
+}
