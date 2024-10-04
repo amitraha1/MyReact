@@ -1,0 +1,13 @@
+ install tupescript
+
+PS C:\Users\Administrator\workspace> npm install typescript --save-dev
+
+added 1 package, and audited 8 packages in 3s
+
+found 0 vulnerabilities
+PS C:\Users\Administrator\workspace> npm install typescript@next --save-dev
+
+changed 1 package, and audited 8 packages in 3s
+
+PS C:\Users\Administrator\workspace> npx create-react-app ts-react-demo --template typescript 
+
